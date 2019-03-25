@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="miDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">   
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost/db_tienda"/>
+		<property name="username" value="root"/>
+		<property name="password" value=""/>
+		
+	</bean>
+	
+    <bean id="usuariosDAO" class="daos.UsuariosDAOImpl">
+	<!-- la siguiente línea ejecuta el setElDataSource, dándole la bean de arriba 
+		de id miDataSource -->
+    	<property name="elDataSource" ref="miDataSource"/>
+    </bean>
+    
+    <bean id="juegoDAO" class="daos.JuegoDAOImpl">
+    	<property name="elDataSource" ref="miDataSource"/>
+    </bean>  
+    
+    <bean id="categoriaDAO" class="daos.CategoriaDAOImpl">
+    	<property name="elDataSource" ref="miDataSource"/>
+    </bean> 
+    
+    <bean id="servicioDAO" class="daos.ServicioDAOImpl">
+    	<property name="elDataSource" ref="miDataSource"/>
+    </bean>  
+        
+
+</beans>
+
