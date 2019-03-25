@@ -10,7 +10,8 @@
 
 	<jsp:include page="menu.jsp" />
 	<div>Introduce los datos del nuevo juego</div>
-	<form action="ServletRegistroProductos" method="post">
+	<form action="ServletRegistroProductos" method="post" 
+	 enctype="multipart/form-data">
 		nombre:<input type="text" name="campoNombre"/><br/>
 		desarollador:<input type="text" name="campoDesarollador"/><br/>
 		duracion:<input type="text" name="campoDuracion"/><br/>
@@ -19,7 +20,7 @@
 		stock:<input type="number" name="campoStock"/><br/>
 		precio:<input type="number" name="campoPrecio"/><br/>
 				
-		
+		imagen:<input type="file" name="campoImagen"/><br/>
 		
 		<input type="submit" value="Registrarme"/>
 	</form>
