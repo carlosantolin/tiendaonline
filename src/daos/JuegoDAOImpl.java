@@ -26,12 +26,13 @@ public class JuegoDAOImpl implements JuegoDAO {
 		this.elDataSource = elDataSource;
 		simpleInsert = new SimpleJdbcInsert(elDataSource);
 		simpleInsert.setTableName("tabla_juegos");
+		simpleInsert.usingGeneratedKeyColumns("id");
 		jdbcTemplate = new JdbcTemplate(elDataSource);
 		
 	}
 	
 	@Override
-	public void registrarJuego(Juego o) {
+	public int registrarJuego(Juego o) {
 		HashMap<String, Object> valores = new HashMap<String, Object>();
 		valores.put("nombre", o.getNombre());
 		valores.put("desarollador", o.getDesarollador());
@@ -40,7 +41,8 @@ public class JuegoDAOImpl implements JuegoDAO {
 		valores.put("duracion", o.getDuracion());
 		valores.put("precio", o.getPrecio());
 		valores.put("stock", o.getStock());
-		simpleInsert.execute(valores);
+		//simpleInsert.execute(valores);
+		return simpleInsert.executeAndReturnKey(valores).intValue();
 	}
 
 	@Override

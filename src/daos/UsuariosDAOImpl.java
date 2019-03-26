@@ -30,18 +30,19 @@ public class UsuariosDAOImpl implements UsuariosDAO {
 		this.elDataSource = elDataSource;
 		simpleInsert = new SimpleJdbcInsert(elDataSource);
 		simpleInsert.setTableName("tabla_usuarios");
+		simpleInsert.usingGeneratedKeyColumns("id");
 		jdbcTemplate = new JdbcTemplate(elDataSource);
 		
 	}
 
 	@Override
-	public void registrarUsuario(Usuario u) {
+	public int registrarUsuario(Usuario u) {
 		HashMap<String, Object> valores = new HashMap<String, Object>();
 		valores.put("nombre", u.getNombre());
 		valores.put("email", u.getEmail());
 		valores.put("pass", u.getPass());
-		simpleInsert.execute(valores);
-		
+		//simpleInsert.execute(valores);
+		return simpleInsert.executeAndReturnKey(valores).intValue();
 	}
 
 	@Override

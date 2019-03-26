@@ -10,10 +10,12 @@
 
 	<jsp:include page="menu.jsp" />
 	<div>Introduce los datos del nuevo usuario</div>
-	<form action="ServletRegistroUsuarios" method="post">
+	<form action="ServletRegistroUsuarios" method="post" 
+		enctype="multipart/form-data">
 		nombre:<input type="text" name="campoNombre"/><br/>
 		email:<input type="email" name="campoEmail"/><br/>
 		contraseña:<input type="password" name="campoPass"/><br/>
+		avatar:<input type="file" name="campoImagen"/><br/>
 		<input type="submit" value="Registrarme"/>
 	</form>
 

@@ -6,7 +6,7 @@ import modelo.Usuario;
 
 public interface UsuariosDAO {
 	
-	void registrarUsuario(Usuario u);
+	int registrarUsuario(Usuario u);
 	List<Usuario> obtenerUsuarios();
 	int obtenerIdUsuarioPorEmailYPass(String email, String pass);
 

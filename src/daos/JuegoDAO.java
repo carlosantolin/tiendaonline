@@ -6,7 +6,7 @@ import modelo.Juego;
 
 public interface JuegoDAO {
 	
-	void registrarJuego(Juego u);
+	int registrarJuego(Juego u);
 	List<Juego> obtenerJuegos();
 
 }

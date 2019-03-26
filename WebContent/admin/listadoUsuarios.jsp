@@ -19,6 +19,8 @@
 				<td>${usuario.email}</td>
 				<td>${usuario.pass}</td>
 				<td>${usuario.id}</td>
+				<td><img width="50" height="50" 
+				src="/47tiendaonline/images/${usuario.id}.png"></td>
 				
 			</tr>
 		</c:forEach>
