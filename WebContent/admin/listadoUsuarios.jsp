@@ -14,6 +14,7 @@
 
 	<table>
 		<c:forEach items="${usuarios}" var="usuario">
+		<form action="ServletBorradoUsuarios" method="post">
 			<tr>
 				<td>${usuario.nombre}</td>
 				<td>${usuario.email}</td>
@@ -21,8 +22,11 @@
 				<td>${usuario.id}</td>
 				<td><img width="50" height="50" 
 				src="/47tiendaonline/images/${usuario.id}.png"></td>
+				<td><input type="hidden" value="${usuario.id}" name="campoId"><input type="submit" value="Borrar"/></td>
+				<td><input type="submit" formaction="ServletEditarUsuarios" value="Editar"/></td>
 				
 			</tr>
+			</form>
 		</c:forEach>
 	</table>
 

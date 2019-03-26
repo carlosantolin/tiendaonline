@@ -14,6 +14,7 @@
 
 	<table>
 		<c:forEach items="${juegos}" var="juego">
+		<form action="ServletBorradoProductos" method="post">
 			<tr>
 				<td>${juego.nombre}</td>
 				<td>${juego.desarollador}</td>
@@ -25,9 +26,11 @@
 				<td>${juego.id}</td>
 				<td><img width="50" height="50" 
 				src="/47tiendaonline/images/${juego.nombre}.png"></td>
+			<td><input type="submit" value="Borrar"/></td>
+				<td><input type="submit" formaction="ServletEditarProductos" value="Editar"/></td>
 				
-
 			</tr>
+			</form>
 		</c:forEach>
 	</table>
 

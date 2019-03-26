@@ -65,5 +65,16 @@ public class UsuariosDAOImpl implements UsuariosDAO {
 		
 		return id;
 	}
+	
+	public void borrarUsuario(int id){
+		String sql = ConstantesSQL.SQL_BORRADO_USUARIOS;
+		try {
+			jdbcTemplate.update(sql, new Object[] {id});
+			System.out.println("Borrado el usuario con id: " + Integer.toString(id));
+		} catch (Exception e) {
+			System.out.println("Error al obtener id de usuario");
+			System.out.println(e.getMessage());
+		}
+	}
 
 }
