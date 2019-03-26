@@ -26,7 +26,7 @@
 				<td>${juego.id}</td>
 				<td><img width="50" height="50" 
 				src="/47tiendaonline/images/${juego.nombre}.png"></td>
-			<td><input type="submit" value="Borrar"/></td>
+			<td><input type="hidden" value="${juego.id}" name="campoId"><input type="submit" value="Borrar"/></td>
 				<td><input type="submit" formaction="ServletEditarProductos" value="Editar"/></td>
 				
 			</tr>

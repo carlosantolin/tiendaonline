@@ -51,5 +51,16 @@ public class JuegoDAOImpl implements JuegoDAO {
 		List<Juego> ordenadores = (List<Juego>) jdbcTemplate.query(sql, new BeanPropertyRowMapper(Juego.class));
 		return ordenadores;
 	}
+	
+	public void borrarJuego(int id){
+		String sql = ConstantesSQL.SQL_BORRADO_JUEGOS;
+		try {
+			jdbcTemplate.update(sql, new Object[] {id});
+			System.out.println("Borrado el juego con id: " + Integer.toString(id));
+		} catch (Exception e) {
+			System.out.println("Error al obtener id de juego");
+			System.out.println(e.getMessage());
+		}
+	}
 
 }
