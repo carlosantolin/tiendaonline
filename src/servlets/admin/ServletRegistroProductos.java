@@ -43,7 +43,8 @@ public class ServletRegistroProductos extends HttpServlet {
 	       Part filePart = request.getPart("campoImagen");
 	       InputStream imageInputStream = filePart.getInputStream();
 	       //read imageInputStream
-	       filePart.write("/home/carlos/data/"+request.getParameter("campoNombre"));
+	       filePart.write("/home/carlos/images/"
+	       +request.getParameter("campoNombre")+".png");
 	       //can also write the photo to local storage
 
 	       

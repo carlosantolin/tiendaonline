@@ -28,6 +28,7 @@ public class ServletListadoProductos extends HttpServlet {
 
 		List<Juego> juegos = dao.obtenerJuegos();
 		request.setAttribute("juegos", juegos);
+		
 
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/admin/listadoProductos.jsp");
 		rd.forward(request, response);

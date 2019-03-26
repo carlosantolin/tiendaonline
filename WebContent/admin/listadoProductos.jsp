@@ -23,6 +23,9 @@
 				<td>${juego.precio}</td>
 				<td>${juego.stock}</td>
 				<td>${juego.id}</td>
+				<td><img width="50" height="50" 
+				src="/47tiendaonline/images/${juego.nombre}.png"></td>
+				
 
 			</tr>
 		</c:forEach>
