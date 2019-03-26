@@ -62,5 +62,20 @@ public class JuegoDAOImpl implements JuegoDAO {
 			System.out.println(e.getMessage());
 		}
 	}
+	
+	public void editarJuego(Juego j){
+		String sql = ConstantesSQL.SQL_EDICION_JUEGOS;
+		try {
+			jdbcTemplate.update(sql, new Object[]
+					{j.getDesarollador(), j.getDuracion(), j.getFecha(), j.getGenero(), 
+					j.getNombre(), j.getPrecio(), j.getStock()});
+			System.out.println("Editado el juego con id: " + Integer.toString(j.getId()));
+		} catch (Exception e) {
+			System.out.println("Error al obtener id de juego");
+			System.out.println(e.getMessage());
+		}
+	}
+		
+	
 
 }

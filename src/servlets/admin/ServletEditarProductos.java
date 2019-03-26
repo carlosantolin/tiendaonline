@@ -2,7 +2,6 @@ package servlets.admin;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Collection;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -19,52 +18,51 @@ import org.springframework.web.context.ContextLoader;
 import org.springframework.web.context.WebApplicationContext;
 
 import daos.JuegoDAO;
-import daos.UsuariosDAO;
 
 /**
- * Servlet implementation class ServletRegistroProductos
+ * Servlet implementation class ServletEditarProductos
  */
 @MultipartConfig
-@WebServlet("/admin/ServletRegistroProductos")
-public class ServletRegistroProductos extends HttpServlet {
+@WebServlet("/admin/ServletEditarProductos")
+public class ServletEditarProductos extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		WebApplicationContext contenedor = ContextLoader.getCurrentWebApplicationContext();
 		JuegoDAO dao = contenedor.getBean(JuegoDAO.class);
 		
 		
-	      
+     
 
 	       Part filePart = request.getPart("campoImagen");
-	       InputStream imageInputStream = filePart.getInputStream();
-	       //read imageInputStream
-	       filePart.write("/home/carlos/images/"
-	       +request.getParameter("campoNombre")+".png");
-	       //can also write the photo to local storage
+	       
+	       if (filePart != null) {
+			filePart.write("/home/carlos/images/"
+					+ request.getParameter("campoNombre") + ".png");
+			//can also write the photo to local storage
+		}
+		
 
 	       
 		
 		//adaptar
-		
+		System.out.println(request.getParameter("campoPrecio"));
 		Juego nuevo = new Juego(request.getParameter("campoNombre"),
 				request.getParameter("campoDesarollador"),
 				request.getParameter("campoFecha"),
-				request.getParameter("campoDescripcion"),
+				request.getParameter("campoGenero"),
 				request.getParameter("campoDuracion"),
-				Double.parseDouble(request.getParameter("campoPrecio")),
+				(double) Double.parseDouble(request.getParameter("campoPrecio")),
 				Integer.parseInt(request.getParameter("campoStock")));
-		System.out.println(nuevo.toString());
+		
 		
 		dao.registrarJuego(nuevo);
 		
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/admin/listadoProductos.jsp");
 		rd.forward(request, response);
-	
 	}
 
 }

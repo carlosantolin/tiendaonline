@@ -7,7 +7,7 @@ public class Juego {
 	private String fecha;
 	private String genero;
 	private String duracion;
-	private Double precio;
+	private double precio;
 	private int stock;
 	private int id;
 	
@@ -18,7 +18,7 @@ public class Juego {
 	
 
 	public Juego(String nombre, String desarollador, String fecha,
-			String genero, String duracion, Double precio, int stock) {
+			String genero, String duracion, double precio, int stock) {
 		super();
 		this.nombre = nombre;
 		this.desarollador = desarollador;
@@ -71,11 +71,11 @@ public class Juego {
 		this.duracion = duracion;
 	}
 
-	public Double getPrecio() {
+	public double getPrecio() {
 		return precio;
 	}
 
-	public void setPrecio(Double precio) {
+	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
 

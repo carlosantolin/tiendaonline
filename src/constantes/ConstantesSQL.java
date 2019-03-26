@@ -9,5 +9,6 @@ public class ConstantesSQL {
 	public final static String SQL_SELECCION_CATEGORIAS = "SELECT * FROM tabla_categorias ORDER BY id DESC;";
 	public final static String SQL_BORRADO_USUARIOS = "DELETE FROM tabla_usuarios WHERE id=?;";
 	public final static String SQL_BORRADO_JUEGOS = "DELETE FROM tabla_juegos WHERE id=?;";
+	public final static String SQL_EDICION_JUEGOS ="UPDATE tabla_juegos SET desarollador=?, duracion=?, fecha=?, genero=?, nombre=?, precio=?, stock=? WHERE id=?;";
 
 }
