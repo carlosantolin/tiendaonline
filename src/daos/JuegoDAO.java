@@ -10,5 +10,7 @@ public interface JuegoDAO {
 	List<Juego> obtenerJuegos();
 	void borrarJuego(int id);
 	void editarJuego(Juego u);
+	int obtenerTotalJuego();
+	List<Juego> obtenerJuegos(int comienzo, int cuantos);
 
 }

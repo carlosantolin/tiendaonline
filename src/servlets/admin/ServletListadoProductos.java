@@ -25,9 +25,24 @@ public class ServletListadoProductos extends HttpServlet {
 		
 		WebApplicationContext contenedor = ContextLoader.getCurrentWebApplicationContext();
 		JuegoDAO dao = contenedor.getBean(JuegoDAO.class);
+		
+		int comienzo = 0;
+		int cuantos = 10;
+		
+		if(request.getParameter("comienzo")!=null) {
+			comienzo = Integer.parseInt(request.getParameter("comienzo"));
+		}
+		
+		int anterior = comienzo -10;
+		int siguiente = comienzo+10;
+		int total = dao.obtenerTotalJuego();
 
-		List<Juego> juegos = dao.obtenerJuegos();
+		List<Juego> juegos = dao.obtenerJuegos(comienzo, cuantos);
 		request.setAttribute("juegos", juegos);
+		request.setAttribute("anterior", anterior);
+		request.setAttribute("siguiente", siguiente);
+		request.setAttribute("total", total);
+
 		
 
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/admin/listadoProductos.jsp");

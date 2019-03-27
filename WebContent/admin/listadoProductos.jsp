@@ -11,6 +11,15 @@
 
 	<jsp:include page="menu.jsp" />
 	<div>Listado de productos de la tienda</div>
+	
+	<div>
+		<c:if test="${anterior >= 0}">
+	<a href="ServletListadoProductos?comienzo=${anterior}">anterior</a> &nbsp;&nbsp;&nbsp;&nbsp;
+	</c:if>
+	<c:if test="${siguiente < total}">
+	<a href="ServletListadoProductos?comienzo=${siguiente}">siguiente</a> 
+	</c:if>
+	</div>
 
 	<table>
 		<c:forEach items="${juegos}" var="juego">

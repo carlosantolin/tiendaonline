@@ -12,7 +12,7 @@
 	<jsp:include page="menu.jsp" />
 	<div>Listado de usuarios registrados de la tienda</div>
 	
-	<div>${total}
+	<div>
 		<c:if test="${anterior >= 0}">
 	<a href="ServletListadoUsuarios?comienzo=${anterior}">anterior</a> &nbsp;&nbsp;&nbsp;&nbsp;
 	</c:if>

@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 
 import constantes.ConstantesSQL;
 import modelo.Juego;
+import modelo.Usuario;
 
 public class JuegoDAOImpl implements JuegoDAO {
 	
@@ -74,6 +75,21 @@ public class JuegoDAOImpl implements JuegoDAO {
 			System.out.println("Error al obtener id de juego");
 			System.out.println(e.getMessage());
 		}
+	}
+
+	@Override
+	public int obtenerTotalJuego() {
+		
+		return jdbcTemplate.queryForInt(ConstantesSQL.SQL_TOTAL_JUGADORES);
+	}
+
+	@Override
+	public List<Juego> obtenerJuegos(int comienzo, int cuantos) {
+		String sql = ConstantesSQL.SQL_SELECCION_JUEGOS_INICIO_CUANTOS;
+		
+		List<Juego> valores = jdbcTemplate.query(sql, new Object[] {comienzo, cuantos}, new BeanPropertyRowMapper(Juego.class));
+		
+		return valores;
 	}
 		
 	
