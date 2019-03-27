@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+ <link rel="stylesheet" href="w3.css"> 
 <meta charset="UTF-8">
 <title>Listado de usuarios</title>
 </head>
@@ -21,9 +22,18 @@
 	</c:if>
 	</div>
 
-	<table>
+	<table class="w3-table-all w3-small">
+	<tr class="w3-red">
+  				<th>Nombre</th>
+  				<th>e-mail</th>
+  				<th>contraseña</th>
+  				
+
+			</tr>
 		<c:forEach items="${usuarios}" var="usuario">
 		<form action="ServletBorradoUsuarios" method="post">
+		
+		
 			<tr>
 				<td>${usuario.nombre}</td>
 				<td>${usuario.email}</td>

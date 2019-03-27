@@ -5,13 +5,25 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+ <link rel="stylesheet" href="w3.css"> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Editar Producto</title>
 </head>
 <body>
 
 <form action="ServletEditarProductos" method="post" enctype="multipart/form-data">
-<table>
+<table class="w3-table-all w3-small ">
+			<tr class="w3-red">
+  				<th>Nombre</th>
+  				<th>Desarrollador</th>
+  				<th>Genero</th>
+  				<th>Duracion</th>
+  				<th>Fecha</th>
+  				<th>Precio</th>
+  				<th>Stock</th>
+  				<th>Id</th>
+  				<th>Imagen</th>
+  			</tr>
 			<tr>
 				<td>${juego.nombre}</td>
 				<td>${juego.desarollador}</td>

@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+ <link rel="stylesheet" href="w3.css"> 
 <meta charset="UTF-8">
 <title>Listado de productos</title>
 </head>
@@ -21,8 +22,21 @@
 	</c:if>
 	</div>
 
-	<table>
+	<table class="w3-table-all w3-small ">
+	<tr class="w3-red">
+  				<th>Nombre</th>
+  				<th>Desarrollador</th>
+  				<th>Genero</th>
+  				<th>Duracion</th>
+  				<th>Fecha</th>
+  				<th>Precio</th>
+  				<th>Stock</th>
+  				<th>Imagen</th>
+
+			</tr>
 		<c:forEach items="${juegos}" var="juego">
+		
+		
 
 			<tr>
 				<td>${juego.nombre}</td>
@@ -32,7 +46,6 @@
 				<td>${juego.fecha}</td>
 				<td>${juego.precio}</td>
 				<td>${juego.stock}</td>
-				<td>${juego.id}</td>
 				<td><img width="50" height="50" 
 				src="/47tiendaonline/images/${juego.nombre}.png"></td>
 							

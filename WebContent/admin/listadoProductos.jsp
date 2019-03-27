@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+ <link rel="stylesheet" href="w3.css"> 
 <meta charset="UTF-8">
 <title>Listado de productos</title>
 </head>
@@ -21,9 +22,23 @@
 	</c:if>
 	</div>
 
-	<table>
+	<table class="w3-table-all w3-small ">
+	<tr class="w3-red">
+  				<th>Nombre</th>
+  				<th>Desarrollador</th>
+  				<th>Genero</th>
+  				<th>Duracion</th>
+  				<th>Fecha</th>
+  				<th>Precio</th>
+  				<th>Stock</th>
+  				<th>Id</th>
+  				<th>Imagen</th>
+  				<th>Borrar</th>
+  				<th>Editar</th>
+			</tr> 
 		<c:forEach items="${juegos}" var="juego">
 		<form action="ServletBorradoProductos" method="post">
+		 	
 			<tr>
 				<td>${juego.nombre}</td>
 				<td>${juego.desarollador}</td>
