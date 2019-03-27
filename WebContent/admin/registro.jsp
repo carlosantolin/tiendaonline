@@ -9,8 +9,8 @@
 <body>
 
 	<jsp:include page="menu.jsp"/>
-	<div>Introduce los datos del nuevo usuarioe:</div>
-	<form action="ServletRegistroUsuario" method="post"><br/>
+	<div>Introduce los datos del nuevo usuario:</div>
+	<form action="ServletRegistroUsuario" name="formulario" method="post"><br/>
 		nombre:<input type="text" name="campoNombre"/><br/>
 		email:<input type="email" name="campoEmail" onkeyup="validarEmail();"/><br/>
 		contraseña:<input type="password" name="campoPass"/><br/>
@@ -19,13 +19,13 @@
 	</form>
 
 </body>
-<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
 function validarEmail(){
 	var param = {email: $("input[name=campoEmail]").val()};
           
 	$.ajax({
-	     url:"ValidarEmail", 
+	     url:"../ValidarEmail", 
 	     data : param,
 	     success:function(resultado){
 	         if(resultado == "-1"){
