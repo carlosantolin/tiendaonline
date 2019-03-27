@@ -77,4 +77,21 @@ public class UsuariosDAOImpl implements UsuariosDAO {
 		}
 	}
 
+	@Override
+	public List<Usuario> obtenerUsuarios(int comienzo, int cuantos) {
+		String sql = ConstantesSQL.SQL_SELECCION_USUARIOS_INICIO_CUANTOS;
+		
+		List<Usuario> valores = jdbcTemplate.query(sql, new Object[] {comienzo, cuantos}, new BeanPropertyRowMapper(Usuario.class));
+		
+		return valores;
+	}
+
+	@Override
+	public int obtenerTotalUsuario() {
+		int total = jdbcTemplate.queryForInt(ConstantesSQL.SQL_TOTAL_USUARIOS);
+		
+		return total;
+	}
+	
+
 }

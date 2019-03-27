@@ -30,8 +30,23 @@ public class ServletListadoUsuarios extends HttpServlet {
 		WebApplicationContext contenedor = ContextLoader.getCurrentWebApplicationContext();
 		UsuariosDAO dao = contenedor.getBean(UsuariosDAO.class);
 		
-		List<Usuario> usuarios = dao.obtenerUsuarios();
+		int comienzo = 0;
+		int cuantos = 10;
+		
+		if(request.getParameter("comienzo")!=null) {
+			comienzo = Integer.parseInt(request.getParameter("comienzo"));
+		}
+		
+		int anterior = comienzo -10;
+		int siguiente = comienzo+10;
+		int total = dao.obtenerTotalUsuario();
+		
+		
+		List<Usuario> usuarios = dao.obtenerUsuarios(comienzo, cuantos);
 		request.setAttribute("usuarios", usuarios);
+		request.setAttribute("anterior", anterior);
+		request.setAttribute("siguiente", siguiente);
+		request.setAttribute("total", total);
 		
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/admin/listadoUsuarios.jsp");
 		rd.forward(request, response);

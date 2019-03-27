@@ -10,5 +10,6 @@ public class ConstantesSQL {
 	public final static String SQL_BORRADO_USUARIOS = "DELETE FROM tabla_usuarios WHERE id=?;";
 	public final static String SQL_BORRADO_JUEGOS = "DELETE FROM tabla_juegos WHERE id=?;";
 	public final static String SQL_EDICION_JUEGOS ="UPDATE tabla_juegos SET desarollador=?, duracion=?, fecha=?, genero=?, nombre=?, precio=?, stock=? WHERE id=?;";
-
+	public final static String SQL_SELECCION_USUARIOS_INICIO_CUANTOS = "SELECT * FROM tabla_usuarios ORDER BY id DESC limit ?,?;";
+	public final static String SQL_TOTAL_USUARIOS = "SELECT COUNT(*) FROM tabla_usuarios;";
 }

@@ -10,5 +10,7 @@ public interface UsuariosDAO {
 	List<Usuario> obtenerUsuarios();
 	int obtenerIdUsuarioPorEmailYPass(String email, String pass);
 	void borrarUsuario(int id);
+	List<Usuario> obtenerUsuarios(int comienzo, int cuantos);
+	int obtenerTotalUsuario();
 
 }
