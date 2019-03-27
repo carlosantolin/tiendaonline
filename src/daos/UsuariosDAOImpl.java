@@ -92,6 +92,19 @@ public class UsuariosDAOImpl implements UsuariosDAO {
 		
 		return total;
 	}
+
+	@Override
+	public int obtenerIdUsuarioPorEmail(String email) {
+		int id = -1;
+		String sql = ConstantesSQL.SQL_SELECCION_ID_POR_EMAIL;
+		try {
+			id = jdbcTemplate.queryForInt(sql, new Object[] {email});
+		} catch (Exception e) {
+			System.out.println("El email no exixste:	" + e.getMessage());
+		}
+		
+		return id;
+	}
 	
 
 }

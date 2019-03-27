@@ -23,14 +23,15 @@
 <script type="text/javascript">
 function validarEmail(){
 	var param = {email: $("input[name=campoEmail]").val()};
-	alert("ho");
-// 	$.ajax(("${pageContext.request.contextPath}/ValidarEmail", $.param(param), function(resuesta) {   //  Ejecuta un GET en el servlet y ejecuta la funcion asociada
-//         alert(respuesta);}))           
+          
 	$.ajax({
 	     url:"ValidarEmail", 
 	     data : param,
-	     success:function(json){
-	         alert(json);
+	     success:function(resultado){
+	         if(resultado == "-1"){
+	        	 return;
+	         }
+	         alert("El email introducido ya existe. Por favor, introduce otro o inicia sesión.");
 	     },
 	     error:function( jqXHR, textStatus, errorThrown){
 	         alert(textStatus);
