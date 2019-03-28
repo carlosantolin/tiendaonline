@@ -24,7 +24,7 @@
 	
 	<div>
 		<form action="ServletListadoProductos">
-			buscar: <input type="text" name ="campoBusqueda"/>
+			buscar: <input type="text" value="${campoBusqueda}" name ="campoBusqueda"/>
 			<input type="submit" value="BUSCAR"/>
 		</form>
 	</div>

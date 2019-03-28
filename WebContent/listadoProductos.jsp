@@ -21,6 +21,13 @@
 	<a href="ServletPortada?comienzo=${siguiente}">siguiente</a> 
 	</c:if>
 	</div>
+	
+	<div>
+		<form action="ServletListadoProductos">
+			buscar: <input type="text" value="${campoBusqueda}" name ="campoBusqueda"/>
+			<input type="submit" value="BUSCAR"/>
+		</form> 
+	</div>
 
 	<table class="w3-table-all w3-small ">
 	<tr class="w3-red">
