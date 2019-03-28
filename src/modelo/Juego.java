@@ -6,6 +6,7 @@ public class Juego {
 	private String desarollador;
 	private String fecha;
 	private int id_genero;
+	private String genero;
 	private String duracion;
 	private double precio;
 	private int stock;
@@ -99,6 +100,18 @@ public class Juego {
 
 	public void setId_genero(int id_genero) {
 		this.id_genero = id_genero;
+	}
+
+
+
+	public String getGenero() {
+		return genero;
+	}
+
+
+
+	public void setGenero(String genero) {
+		this.genero = genero;
 	}
 	
 	

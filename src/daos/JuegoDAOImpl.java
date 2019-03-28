@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 
 import constantes.ConstantesSQL;
 import modelo.Juego;
+import modelo.JuegoRowMapper;
 import modelo.Usuario;
 
 public class JuegoDAOImpl implements JuegoDAO {
@@ -96,7 +97,7 @@ public class JuegoDAOImpl implements JuegoDAO {
 	public List<Juego> obtenerJuegos(String busqueda, int comienzo, int cuantos) {
 		String sql = ConstantesSQL.SQL_BUSQUEDA_JUEGOS_INICIO_CUANTOS;
 		
-		List<Juego> valores = jdbcTemplate.query(sql, new Object[] {"%"+busqueda+"%", comienzo, cuantos}, new BeanPropertyRowMapper(Juego.class));
+		List<Juego> valores = jdbcTemplate.query(sql, new Object[] {"%"+busqueda+"%", comienzo, cuantos}, new JuegoRowMapper());
 	
 		return valores;
 	}
