@@ -26,7 +26,7 @@ public class ServletRegistrarCienJuegadores extends HttpServlet {
 	JuegoDAO dao = contenedor.getBean(JuegoDAO.class);
 	
 	for (int i = 0; i < 100; i++) {
-		Juego u = new Juego("smash"+i, "nintendo", "2018", "lucha", "infinita", 68, 50);
+		Juego u = new Juego("smash"+i, "nintendo", "2018", 1, "infinita", 68, 50);
 		dao.registrarJuego(u);
 	}
 	

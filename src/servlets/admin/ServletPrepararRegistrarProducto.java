@@ -1,8 +1,10 @@
 package servlets.admin;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,6 +33,16 @@ public class ServletPrepararRegistrarProducto extends HttpServlet {
 		CategoriaDAO dao = contenedor.getBean(CategoriaDAO.class);
 		
 		List<Categoria> categorias = dao.obtenerCategorias();
+		
+		
+		
+		
+		
+		request.setAttribute("categorias", categorias);
+		
+		
+		RequestDispatcher rd = getServletContext().getRequestDispatcher("/admin/registrarProducto.jsp");
+		rd.forward(request, response);
 	}
 
 }

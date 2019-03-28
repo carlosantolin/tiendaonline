@@ -53,7 +53,7 @@
 			<tr>
 				<td>${juego.nombre}</td>
 				<td>${juego.desarollador}</td>
-				<td>${juego.genero}</td>
+				<td>${juego.id_genero}</td>
 				<td>${juego.duracion}</td>
 				<td>${juego.fecha}</td>
 				<td>${juego.precio}</td>

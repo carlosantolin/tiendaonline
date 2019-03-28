@@ -54,7 +54,7 @@ public class ServletRegistroProductos extends HttpServlet {
 		Juego nuevo = new Juego(request.getParameter("campoNombre"),
 				request.getParameter("campoDesarollador"),
 				request.getParameter("campoFecha"),
-				request.getParameter("campoDescripcion"),
+				Integer.parseInt(request.getParameter("campoDescripcion")),
 				request.getParameter("campoDuracion"),
 				Double.parseDouble(request.getParameter("campoPrecio")),
 				Integer.parseInt(request.getParameter("campoStock")));

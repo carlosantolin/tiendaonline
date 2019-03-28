@@ -5,7 +5,7 @@ public class Juego {
 	private String nombre;
 	private String desarollador;
 	private String fecha;
-	private String genero;
+	private int id_genero;
 	private String duracion;
 	private double precio;
 	private int stock;
@@ -18,12 +18,12 @@ public class Juego {
 	
 
 	public Juego(String nombre, String desarollador, String fecha,
-			String genero, String duracion, double precio, int stock) {
+			int genero, String duracion, double precio, int stock) {
 		super();
 		this.nombre = nombre;
 		this.desarollador = desarollador;
 		this.fecha = fecha;
-		this.genero = genero;
+		this.id_genero = genero;
 		this.duracion = duracion;
 		this.precio = precio;
 		this.stock = stock;
@@ -55,13 +55,7 @@ public class Juego {
 		this.fecha = fecha;
 	}
 
-	public String getGenero() {
-		return genero;
-	}
-
-	public void setGenero(String genero) {
-		this.genero = genero;
-	}
+	
 
 	public String getDuracion() {
 		return duracion;
@@ -93,6 +87,18 @@ public class Juego {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+
+
+	public int getId_genero() {
+		return id_genero;
+	}
+
+
+
+	public void setId_genero(int id_genero) {
+		this.id_genero = id_genero;
 	}
 	
 	

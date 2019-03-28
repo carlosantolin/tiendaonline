@@ -29,8 +29,8 @@ public class FiltroLogin implements Filter {
 		
 		//El admin esta identificado si:
 		//En la sesion esta el parametro 'admin' con el valor ok
-		if(request.getAttribute("passAdmin") != null
-				&& request.getAttribute("passAdmin").equals(1234)) {
+		if(request.getParameter("passAdmin") != null
+				&& request.getParameter("passAdmin").equals("1234")) {
 			request.getSession().setAttribute("admin", "ok");
 		}
 		

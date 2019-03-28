@@ -53,7 +53,7 @@ public class ServletEditarProductos extends HttpServlet {
 		Juego nuevo = new Juego(request.getParameter("campoNombre"),
 				request.getParameter("campoDesarollador"),
 				request.getParameter("campoFecha"),
-				request.getParameter("campoGenero"),
+				Integer.parseInt(request.getParameter("campoGenero")),
 				request.getParameter("campoDuracion"),
 				(double) Double.parseDouble(request.getParameter("campoPrecio")),
 				Integer.parseInt(request.getParameter("campoStock")));

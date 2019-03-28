@@ -38,7 +38,7 @@ public class JuegoDAOImpl implements JuegoDAO {
 		valores.put("nombre", o.getNombre());
 		valores.put("desarollador", o.getDesarollador());
 		valores.put("fecha", o.getFecha());
-		valores.put("genero", o.getGenero());
+		valores.put("id_genero", o.getId_genero());
 		valores.put("duracion", o.getDuracion());
 		valores.put("precio", o.getPrecio());
 		valores.put("stock", o.getStock());
@@ -68,7 +68,7 @@ public class JuegoDAOImpl implements JuegoDAO {
 		String sql = ConstantesSQL.SQL_EDICION_JUEGOS;
 		try {
 			jdbcTemplate.update(sql, new Object[]
-					{j.getDesarollador(), j.getDuracion(), j.getFecha(), j.getGenero(), 
+					{j.getDesarollador(), j.getDuracion(), j.getFecha(), j.getId_genero(), 
 					j.getNombre(), j.getPrecio(), j.getStock()});
 			System.out.println("Editado el juego con id: " + Integer.toString(j.getId()));
 		} catch (Exception e) {
