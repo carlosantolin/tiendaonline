@@ -12,5 +12,7 @@ public interface JuegoDAO {
 	void editarJuego(Juego u);
 	int obtenerTotalJuego();
 	List<Juego> obtenerJuegos(int comienzo, int cuantos);
+	List<Juego> obtenerJuegos(String busqueda, int comienzo, int cuantos);
+
 
 }

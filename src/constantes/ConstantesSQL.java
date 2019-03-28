@@ -15,4 +15,6 @@ public class ConstantesSQL {
 	public final static String SQL_TOTAL_JUGADORES = "SELECT COUNT(*) FROM tabla_juegos;";
 	public final static String SQL_SELECCION_JUEGOS_INICIO_CUANTOS = "SELECT * FROM tabla_juegos ORDER BY id DESC limit ?,?;";
 	public static final String SQL_SELECCION_ID_POR_EMAIL = "SELECT id FROM tabla_usuarios WHERE email=?;";
+	public static final String SQL_BUSQUEDA_USUARIOS_INICIO_CUANTOS = "SELECT * FROM tabla_usuarios WHERE nombre LIKE ? ORDER BY id DESC limit ?,?;";
+	public static final String SQL_BUSQUEDA_JUEGOS_INICIO_CUANTOS = "SELECT * FROM tabla_juegos WHERE nombre LIKE ? ORDER BY id DESC limit ?,?;";
 }

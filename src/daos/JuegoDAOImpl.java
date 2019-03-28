@@ -91,6 +91,15 @@ public class JuegoDAOImpl implements JuegoDAO {
 		
 		return valores;
 	}
+
+	@Override
+	public List<Juego> obtenerJuegos(String busqueda, int comienzo, int cuantos) {
+		String sql = ConstantesSQL.SQL_BUSQUEDA_JUEGOS_INICIO_CUANTOS;
+		
+		List<Juego> valores = jdbcTemplate.query(sql, new Object[] {"%"+busqueda+"%", comienzo, cuantos}, new BeanPropertyRowMapper(Juego.class));
+	
+		return valores;
+	}
 		
 	
 

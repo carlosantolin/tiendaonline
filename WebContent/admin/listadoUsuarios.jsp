@@ -13,14 +13,25 @@
 	<jsp:include page="menu.jsp" />
 	<div>Listado de usuarios registrados de la tienda</div>
 	
+	
+	
 	<div>
-		<c:if test="${anterior >= 0}">
-	<a href="ServletListadoUsuarios?comienzo=${anterior}">anterior</a> &nbsp;&nbsp;&nbsp;&nbsp;
+		<c:if test="${anterior >= 0}"> <!-- necesiario el &campobusqueda... para mantener el parametro entre las busquedas, el servlet pasa el parametro de vuelta ademas -->
+	<a href="ServletListadoUsuarios?comienzo=${anterior}&campoBusqueda=${campoBusqueda}">anterior</a> &nbsp;&nbsp;&nbsp;&nbsp;
 	</c:if>
 	<c:if test="${siguiente < total}">
-	<a href="ServletListadoUsuarios?comienzo=${siguiente}">siguiente</a> 
+	<a href="ServletListadoUsuarios?comienzo=${siguiente}&campoBusqueda=${campoBusqueda}">siguiente</a> 
 	</c:if>
 	</div>
+	
+	
+	<div>
+		<form action="ServletListadoUsuarios">
+			buscar: <input type="text" value="${campoBusqueda}" name ="campoBusqueda"/>
+			<input type="submit" value="BUSCAR"/>
+		</form>
+	</div>
+	
 
 	<table class="w3-table-all w3-small">
 	<tr class="w3-red">

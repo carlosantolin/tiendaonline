@@ -105,6 +105,15 @@ public class UsuariosDAOImpl implements UsuariosDAO {
 		
 		return id;
 	}
+
+	@Override
+	public List<Usuario> obtenerUsuarios(String busqueda, int comienzo, int cuantos) {
+		String sql = ConstantesSQL.SQL_BUSQUEDA_USUARIOS_INICIO_CUANTOS;
+		
+		List<Usuario> valores = jdbcTemplate.query(sql, new Object[] {"%"+busqueda+"%", comienzo, cuantos}, new BeanPropertyRowMapper(Usuario.class));
+		
+		return valores;
+	}
 	
 
 }

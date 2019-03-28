@@ -15,11 +15,18 @@
 	
 	<div>
 		<c:if test="${anterior >= 0}">
-	<a href="ServletListadoProductos?comienzo=${anterior}">anterior</a> &nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="ServletListadoProductos?comienzo=${anterior}&campoBusqueda=${campoBusqueda}">anterior</a> &nbsp;&nbsp;&nbsp;&nbsp;
 	</c:if>
 	<c:if test="${siguiente < total}">
-	<a href="ServletListadoProductos?comienzo=${siguiente}">siguiente</a> 
+	<a href="ServletListadoProductos?comienzo=${siguiente}&campoBusqueda=${campoBusqueda}">siguiente</a> 
 	</c:if>
+	</div>
+	
+	<div>
+		<form action="ServletListadoProductos">
+			buscar: <input type="text" name ="campoBusqueda"/>
+			<input type="submit" value="BUSCAR"/>
+		</form>
 	</div>
 
 	<table class="w3-table-all w3-small ">
@@ -57,6 +64,8 @@
 			</form>
 		</c:forEach>
 	</table>
+	
+	<jsp:include page="/carritoCompra.jsp" />
 
 </body>
 </html>
