@@ -32,6 +32,10 @@
 		</form>
 	</div>
 	
+	<div>
+		total de usuarios: ${total}
+	</div>
+	
 
 	<table class="w3-table-all w3-small">
 	<tr class="w3-red">

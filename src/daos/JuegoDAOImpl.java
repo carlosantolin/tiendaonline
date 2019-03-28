@@ -100,6 +100,11 @@ public class JuegoDAOImpl implements JuegoDAO {
 	
 		return valores;
 	}
+
+	@Override
+	public int obtenerTotalJuego(String busqueda) {
+		return jdbcTemplate.queryForInt(ConstantesSQL.SQL_BUSQUEDA_TOTAL_JUGADORES, new Object[] {"%"+busqueda+"%"});
+	}
 		
 	
 

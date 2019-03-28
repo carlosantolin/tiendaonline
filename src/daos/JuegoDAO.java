@@ -11,6 +11,7 @@ public interface JuegoDAO {
 	void borrarJuego(int id);
 	void editarJuego(Juego u);
 	int obtenerTotalJuego();
+	int obtenerTotalJuego(String busqueda);
 	List<Juego> obtenerJuegos(int comienzo, int cuantos);
 	List<Juego> obtenerJuegos(String busqueda, int comienzo, int cuantos);
 

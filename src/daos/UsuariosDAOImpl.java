@@ -114,6 +114,12 @@ public class UsuariosDAOImpl implements UsuariosDAO {
 		
 		return valores;
 	}
+
+	@Override
+	public int obtenerTotalUsuario(String busqueda) {
+		return jdbcTemplate.queryForInt(ConstantesSQL.SQL_BUSQUEDA_TOTAL_USUARIOS, new Object[] {"%"+busqueda+"%"});
+
+	}
 	
 
 }

@@ -26,7 +26,11 @@ public class ServletListadoProductos extends HttpServlet {
 		WebApplicationContext contenedor = ContextLoader.getCurrentWebApplicationContext();
 		JuegoDAO dao = contenedor.getBean(JuegoDAO.class);
 		
+		
 		String busqueda = request.getParameter("campoBusqueda");
+		if(busqueda == null) {
+			busqueda = "";
+		}
 		System.out.println("Buscando juego por nombre: " + busqueda);
 		
 		int comienzo = 0;
@@ -38,7 +42,7 @@ public class ServletListadoProductos extends HttpServlet {
 		
 		int anterior = comienzo -10;
 		int siguiente = comienzo+10;
-		int total = dao.obtenerTotalJuego();
+		int total = dao.obtenerTotalJuego(busqueda);
 
 		List<Juego> juegos = dao.obtenerJuegos(busqueda, comienzo, cuantos);
 		request.setAttribute("juegos", juegos);

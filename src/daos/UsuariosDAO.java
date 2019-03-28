@@ -14,5 +14,7 @@ public interface UsuariosDAO {
 	List<Usuario> obtenerUsuarios(int comienzo, int cuantos);
 	List<Usuario> obtenerUsuarios(String busqueda, int comienzo, int cuantos);
 	int obtenerTotalUsuario();
+	int obtenerTotalUsuario(String busqueda);
+
 
 }

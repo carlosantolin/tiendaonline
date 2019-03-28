@@ -32,6 +32,9 @@ public class ServletListadoUsuarios extends HttpServlet {
 		
 		String busqueda = request.getParameter("campoBusqueda");
 		System.out.println("Buscando usuario por nombre: " + busqueda);
+		if(busqueda == null) {
+			busqueda = "";
+		}
 		
 		
 		int comienzo = 0;
@@ -43,7 +46,7 @@ public class ServletListadoUsuarios extends HttpServlet {
 		
 		int anterior = comienzo -10;
 		int siguiente = comienzo+10;
-		int total = dao.obtenerTotalUsuario();
+		int total = dao.obtenerTotalUsuario(busqueda);
 		
 		
 		List<Usuario> usuarios = dao.obtenerUsuarios(busqueda, comienzo, cuantos);
