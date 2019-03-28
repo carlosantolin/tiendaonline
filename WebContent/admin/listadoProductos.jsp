@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
- <link rel="stylesheet" href="w3.css"> 
+ <link rel="stylesheet" href="../w3.css"> 
 <meta charset="UTF-8">
 <title>Listado de productos</title>
 </head>

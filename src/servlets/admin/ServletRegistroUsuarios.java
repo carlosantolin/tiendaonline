@@ -36,19 +36,16 @@ public class ServletRegistroUsuarios extends HttpServlet {
 		String pass = request.getParameter("campoPass");
 		Usuario nuevo = new Usuario(nombre, email, pass);
 		System.out.println("Voy a registrar: " + nuevo);
-		System.out.println("Vamos a ver si somos capaces de recuperar una bean del contenedor de Spring");
 		WebApplicationContext contenedor = ContextLoader.getCurrentWebApplicationContext();
 		UsuariosDAO dao = contenedor.getBean(UsuariosDAO.class);
 		int id = dao.registrarUsuario(nuevo);
 		
 		Part filePart = request.getPart("campoImagen");
-	       //InputStream imageInputStream = filePart.getInputStream();
-	       //read imageInputStream
+	      
 		String sid = Integer.toString(id);
 		System.out.println(sid);
 	       filePart.write("/home/carlos/images/"
 	       +sid+".png");
-	       //can also write the photo to local storage
 		
 		// Si todo ha ido bien, continúo la petición a registroOK.jsp
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/admin/index.jsp");
