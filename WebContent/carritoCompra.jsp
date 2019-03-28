@@ -15,7 +15,7 @@
   				<th>Imagen</th>
   				
 			</tr> 
-		<c:forEach items="${juegos}" var="juego">
+		<c:forEach items="${sessionScope.carrito}" var="juego">
 		<form action="" method="post">
 		 	
 			<tr>
