@@ -20,4 +20,5 @@ public class ConstantesSQL {
 	public static final String SQL_BUSQUEDA_TOTAL_JUGADORES = "SELECT COUNT(*) FROM tabla_juegos WHERE nombre LIKE ?;";
 	public static final String SQL_BUSQUEDA_TOTAL_USUARIOS = "SELECT COUNT(*) FROM tabla_usuarios WHERE nombre LIKE ?;";
 	
+
 }

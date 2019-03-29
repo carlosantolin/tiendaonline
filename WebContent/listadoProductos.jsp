@@ -42,7 +42,7 @@
 
 			</tr>
 		<c:forEach items="${juegos}" var="juego">
-		
+		<form action="ServletCarritoProductos" method="post">
 		
 
 			<tr>
@@ -55,11 +55,14 @@
 				<td>${juego.stock}</td>
 				<td><img width="50" height="50" 
 				src="/47tiendaonline/images/${juego.nombre}.png"></td>
+				<td><input type="hidden" value="${juego.id}" name="campoId"><input type="submit"  value="Añadir al carrito"/></td>
 							
 			</tr>
 
 		</c:forEach>
 	</table>
+	
+		<jsp:include page="/carritoCompra.jsp" />
 
 </body>
 </html>

@@ -63,6 +63,7 @@
 				src="/47tiendaonline/images/${juego.nombre}.png"></td>
 			<td><input type="hidden" value="${juego.id}" name="campoId"><input type="submit" onclick="return confirm('estas seguro?')" value="Borrar"/></td>
 				<td><input type="hidden" value="${juego.id}" name="campoId"><input type="submit" formaction="ServletMenuEditarProductos" value="Editar"/></td>
+				<td><input type="hidden" value="${juego.id}" name="campoId"><input type="submit" formaction="ServletCompraProductos" value="Añadir al carrito"/></td>
 				
 			</tr>
 			</form>
