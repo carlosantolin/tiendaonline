@@ -38,7 +38,9 @@ public class ServletCompraProductos extends HttpServlet {
 		WebApplicationContext contenedor = ContextLoader.getCurrentWebApplicationContext();
 		JuegoDAO dao = contenedor.getBean(JuegoDAO.class);
 		
-		List<Juego> todos = dao.obtenerJuegos();
+		int total = dao.obtenerTotalJuego();
+		
+		List<Juego> todos = dao.obtenerJuegos("", 0, total);
 		
 		for(Juego j : todos) {
 			if(j.getId() == Integer.parseInt(request.getParameter("campoId"))) {
