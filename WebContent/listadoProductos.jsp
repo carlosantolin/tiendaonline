@@ -35,7 +35,7 @@
   				<th>Desarrollador</th>
   				<th>Genero</th>
   				<th>Duracion</th>
-  				<th>Fecha</th>
+  				<th>Fecha</th>ba
   				<th>Precio</th>
   				<th>Stock</th>
   				<th>Imagen</th>
@@ -58,7 +58,7 @@
 				<td><input type="hidden" value="${juego.id}" name="campoId"><input type="submit"  value="Añadir al carrito"/></td>
 							
 			</tr>
-
+		</form>
 		</c:forEach>
 	</table>
 	
